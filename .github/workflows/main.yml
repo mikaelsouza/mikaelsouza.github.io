@@ -31,7 +31,7 @@ jobs:
     # Runs a set of commands using the runners shell
     - name: Run a multi-line script
       run: |
-        echo oi > a
+        echo oi >> a
         git config --global user.email "mikael@icomp.ufam.edu.br"
         git config --global user.name "Mikael Souza"
         git add a
