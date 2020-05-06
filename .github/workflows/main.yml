@@ -30,6 +30,8 @@ jobs:
     - name: Run a multi-line script
       run: |
         touch a
+        git config --global user.email "mikael@icomp.ufam.edu.br"
+        git config --global user.name "Mikael Souza"
         git add a
         git commit -m "a"
         git push
