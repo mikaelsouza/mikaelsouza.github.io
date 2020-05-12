@@ -2,7 +2,7 @@ name: CI
 
 on:
   schedule:
-    cron: "0 8 * * *"
+    - cron: "0 8 * * *"
   push:
     branches: [ master ]
   pull_request:
@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Run a multi-line script
+    - name: Updating data/data.json file
       run: |
          chmod +x ./updater/main.py
          ./updater/main.py
