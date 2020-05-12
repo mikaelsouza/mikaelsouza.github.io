@@ -1,7 +1,7 @@
 var request = new XMLHttpRequest();
 let url = "https://brasil.io/api/dataset/covid19/caso/data/";
 let params = "?city=Manaus";
-request.open('GET', url + params);
+request.open('GET', "data/data.json");
 
 
 function build_html(city, confirmed, confirmed_diff, date){
