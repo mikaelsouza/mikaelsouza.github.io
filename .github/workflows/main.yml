@@ -14,7 +14,6 @@ jobs:
     - uses: actions/checkout@v2
     - name: Downloading new data/data.json file
       run: |
-#         chmod +x ./updater/main.py
          ./updater/main.py
     - name: Updating data/data.json
       uses: alexesprit/action-update-file@master
