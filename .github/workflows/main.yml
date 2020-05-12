@@ -33,9 +33,8 @@ jobs:
       run: |
          chmod +x ./updater/main.py
          ./updater/main.py
-#        echo oi >> a
-#        git config --global user.email "mikael@icomp.ufam.edu.br"
-#        git config --global user.name "Mikael Souza"
-#        git add a
-#        git commit -m "a"
-#        git push
+         git config --global user.email "mikael@icomp.ufam.edu.br"
+         git config --global user.name "Mikael Souza"
+         git add data/data.json
+         git commit -m "Atualizado data.json - Commit Automático"
+         git push
