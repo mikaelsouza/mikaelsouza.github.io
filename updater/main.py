@@ -5,6 +5,8 @@ import requests
 
 URL = "https://brasil.io/api/dataset/covid19/caso/data/?city=Manaus"
 
-d = requests.get(URL)
+data = requests.get(URL)
 
-print(d.text)
+if data.status_code == 200:
+    with open('./data/data.json', 'w') as f:
+        f.write(data.text + "teste do pezinho")
