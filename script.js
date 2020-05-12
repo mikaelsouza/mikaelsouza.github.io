@@ -4,11 +4,13 @@ let params = "?is_last=True&city=Manaus";
 request.open('GET', url + params);
 
 
-function build_html(city, confirmed){
+function build_html(city, confirmed, date){
     var text;
     text = "Cidade: " + String(city);
     text += '<br>'
     text += "Casos confirmados: " + String(confirmed);
+    text += '<br>'
+    text += "Data de atualização: " + String(date);
     return text;
 }
 
@@ -17,7 +19,8 @@ request.onload = function(){
         let data = JSON.parse(this.response);
         let city = data['results'][0]['city'];
         let confirmed = data['results'][0]['confirmed']
-        let html_text = build_html(city, confirmed)
+        let update_date = data['results'][0]['date']
+        let html_text = build_html(city, confirmed, update_date)
         document.body.innerHTML = html_text;
     }
 }
