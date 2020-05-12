@@ -2,7 +2,7 @@ name: CI
 
 on:
   schedule:
-    cron: "*/5 * * * *"
+    cron: "0 8 * * *"
   push:
     branches: [ master ]
   pull_request:
@@ -19,5 +19,5 @@ jobs:
          git config --global user.email "mikael@icomp.ufam.edu.br"
          git config --global user.name "Mikael Souza"
          git add data/data.json
-         git commit -m "Atualizado data.json - Commit Automático"
+         git commit -m "Atualizando data.json - Commit Automático"
          git push
