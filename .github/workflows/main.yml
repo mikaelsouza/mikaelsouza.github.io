@@ -12,12 +12,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Updating data/data.json file
+    - name: Downloading new data/data.json file
       run: |
          chmod +x ./updater/main.py
          ./updater/main.py
-         git config --global user.email "mikael@icomp.ufam.edu.br"
-         git config --global user.name "Mikael Souza"
-         git add data/data.json
-         git commit -m "Atualizando data.json - Commit Automático"
-         git push
+    - name: Updating data/data.json
+      uses: alexesprit/action-update-file@master
+      with:
+        file-path: data/data.json
+        commit-msg: Atualizando data/data.json
+        github-token: ${{ secrets.GITHUB_TOKEN }}
