@@ -1,24 +1,24 @@
-name: CI
+# name: CI
 
-on:
-  schedule:
-    - cron: "0 8 * * *"
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
-jobs:
-  update-data:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-    - name: Downloading new data/data.json file
-      run: |
-         chmod +x ./updater/main.py
-         ./updater/main.py
-    - name: Updating data/data.json
-      uses: alexesprit/action-update-file@master
-      with:
-        file-path: data/data.json
-        commit-msg: Atualizando data/data.json
-        github-token: ${{ secrets.GITHUB_TOKEN }}
+# on:
+#   schedule:
+#     - cron: "0 8 * * *"
+#   push:
+#     branches: [ master ]
+#   pull_request:
+#     branches: [ master ]
+# jobs:
+#   update-data:
+#     runs-on: ubuntu-latest
+#     steps:
+#     - uses: actions/checkout@v2
+#     - name: Downloading new data/data.json file
+#       run: |
+#          chmod +x ./updater/main.py
+#          ./updater/main.py
+#     - name: Updating data/data.json
+#       uses: alexesprit/action-update-file@master
+#       with:
+#         file-path: data/data.json
+#         commit-msg: Atualizando data/data.json
+#         github-token: ${{ secrets.GITHUB_TOKEN }}
